@@ -53,7 +53,7 @@ public class Edureka {
 		}
 		File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 		FileUtils.copyFile(scrFile, new File("./Screenshot/Homepage.jpg"));	
-		test.log(LogStatus.PASS, test.addScreenCapture("./Screenshot/homepage.jpg")+"Open Simple PHP Website");
+		test.log(LogStatus.PASS, test.addScreenCapture("./Screenshot/Homepage.jpg")+"Open Simple PHP Website");
 	}
 	
 	public static void main(String[] args) throws IOException {
