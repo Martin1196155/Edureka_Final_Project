@@ -28,8 +28,8 @@ pipeline{
             stage('Docker_CleanUP'){
                 agent any
                 steps{
-                    sh 'docker ps -f name=mycont -q | xargs --no-run-if-empty docker container stop'
-                    sh 'docker container ls -a -fname=mycont -q | xargs -r docker container rm'
+                    sh 'sudo docker ps -f name=mycont -q | xargs --no-run-if-empty sudo docker container stop'
+                    sh 'sudo docker container ls -a -fname=mycont -q | xargs -r sudo docker container rm'
                 }
             }
             stage('Docker_Run'){
