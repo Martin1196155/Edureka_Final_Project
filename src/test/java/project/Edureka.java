@@ -22,10 +22,10 @@ public class Edureka {
 	
 	public static WebDriver driver;
 	static Properties prop= new Properties();
-	static ExtentReports report = new ExtentReports("./Report/Report.html");
+	static ExtentReports report = new ExtentReports("C:\\JenkinsDir\\workspace\\Edureka_Project_Final\\Report\\Report.html");
 	static ExtentTest test = report.startTest("Edureka_Project_Test");
 	public static void browserinvoke() {
-		System.setProperty("webdriver.chrome.driver", "./chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "C:\\JenkinsDir\\workspace\\Edureka_Project_Final\\chromedriver.exe");
 		driver=new ChromeDriver();
 	}
 	
@@ -34,7 +34,7 @@ public class Edureka {
 	}
 	
 	public static void propertyfile() throws IOException {
-		String file="./Input.properties";
+		String file="C:\\JenkinsDir\\workspace\\Edureka_Project_Final\\Input.properties";
 		File ofile=new File(file);
 		FileInputStream ifile=new FileInputStream(ofile);
 		prop.load(ifile);
@@ -52,8 +52,8 @@ public class Edureka {
 			test.log(LogStatus.FAIL, "Not Navigated to"+" "+title+" "+"page");
 		}
 		File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-		FileUtils.copyFile(scrFile, new File("./Screenshot/Homepage.jpg"));	
-		test.log(LogStatus.PASS, test.addScreenCapture("./Screenshot/Homepage.jpg")+"Open Simple PHP Website");
+		FileUtils.copyFile(scrFile, new File("C:\\JenkinsDir\\workspace\\Edureka_Project_Final\\Screenshot\\Homepage.jpg"));	
+		test.log(LogStatus.PASS, test.addScreenCapture("C:\\JenkinsDir\\workspace\\Edureka_Project_Final\\Screenshot\\Homepage.jpg")+"Open Simple PHP Website");
 	}
 	
 	public static void main(String[] args) throws IOException {
